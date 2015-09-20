@@ -12,7 +12,7 @@ with open("requirements.txt") as f:
     requirements = [req.strip() for req in f.readlines()]
 
 with open("README_PIP.rst") as f:
-    readme = [line.strip() for line in f.readlines()]
+    readme = f.read()
 
 test_requirements = [
     "nose",

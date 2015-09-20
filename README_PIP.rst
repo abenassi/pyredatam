@@ -97,8 +97,8 @@ deberían proveer, al menos, los siguientes métodos públicos:
    data (no usadas para agregar la base de datos geográficamente, sino
    con la data que es realmente el objetivo de la encuesta o censo).
 
-.. |Coverage Status| image:: https://coveralls.io/repos/abenassi/pyredatam/badge.svg?branch=master
-   :target: https://coveralls.io/r/abenassi/pyredatam?branch=master
+.. |Coverage Status| image:: https://coveralls.io/repos/abenassi/pyredatam/badge.svg?branch=master&service=github
+   :target: https://coveralls.io/github/abenassi/pyredatam?branch=master
 .. |Build Status| image:: https://travis-ci.org/abenassi/pyredatam.svg?branch=master
    :target: https://travis-ci.org/abenassi/pyredatam
 .. |PyPI| image:: https://badge.fury.io/py/pyredatam.svg
