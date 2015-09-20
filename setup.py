@@ -23,7 +23,7 @@ test_requirements = [
 
 setup(
     name='pyredatam',
-    version='0.0.3',
+    version='0.0.4',
     description="Genera consultas REDATAM en python.",
     long_description=read_md('README.md'),
     author="Agustín Benassi",
