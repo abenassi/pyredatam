@@ -7,14 +7,12 @@ try:
 except ImportError:
     from distutils.core import setup
 
-try:
-    from pypandoc import convert
-    read_md = lambda f: convert(f, 'rst')
-except ImportError:
-    read_md = lambda f: open(f, 'r').read()
 
 with open("requirements.txt") as f:
     requirements = [req.strip() for req in f.readlines()]
+
+with open("README_PIP.rst") as f:
+    readme = [line.strip() for line in f.readlines()]
 
 test_requirements = [
     "nose",
@@ -23,9 +21,9 @@ test_requirements = [
 
 setup(
     name='pyredatam',
-    version='0.0.4',
+    version='0.0.5',
     description="Genera consultas REDATAM en python.",
-    long_description=read_md('README.md'),
+    long_description=readme,
     author="Agustín Benassi",
     author_email='agusbenassi@gmail.com',
     url='https://github.com/abenassi/pyredatam',
