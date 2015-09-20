@@ -3,4 +3,4 @@
 __author__ = 'Agustín Benassi'
 __email__ = 'agusbenassi@gmail.com'
 
-import pyredatam
+from pyredatam import arealist_query
