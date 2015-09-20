@@ -1,40 +1,28 @@
-# Config file for automatic testing at travis-ci.org
-
 language: python
-
 sudo: false
-
 python:
-  - "2.7"
-  - "2.6"
-  - "pypy"
-
+- '2.7'
+- '2.6'
+- pypy
 matrix:
   allow_failures:
   - python: '2.6'
   - python: '3.4'
   - python: pypy
-
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install:
 - pip install -r requirements.txt
 - python setup.py install
 - pip install coveralls
-
-# command to run tests, e.g. python setup.py test
 script:
 - nosetests
-
 after_success: coveralls
-
 os:
 - linux
-# - osx
-
 deploy:
   provider: pypi
   user: beni
-
+  password:
+    secure: YvhK07hsufj0pW3vzqHvniRk2YLHMwgOFoC9E8tytsSL5+oCtIgzVKYuwoKh2bP79Wj3sI81JXbFdR64aZA0EB/lFzuUa2vh2N7dNvSZakJSxOP9VC2lCXdQkDEL5F6lnIZxIIE07wOClc3UC6S3ScwEtDb3Nj+0QoJJKTlCazU448+KyYvMUaPnt7d/uJG111wrJcLVc4Fx/iFYRph9rf+lwI5Fe23EESJj3dvnY0HyifrIX0q5wsaFeEOlPKgpdhjobM6dXL6YKFHRobxF+YoUlfTtD1ZjJbUlzDWt9GztKlL0sopau4X39xyezsRsk99Rpab9+K6bVYbA7WszQC4dJq3eehiXXJH9htnchWZig5x8pNyTHQ/hXSVSSVGmWTUhuCVzc/QH2TH78EB09e7vx6KkOVGFeAaZHGADDdCZ/T+giqYWwsHC7InlPaO/4NKRbzxOujTqs8hsqXb6U4UcyE2aYYROOd7BJtm77mqQk/DYA0i7s8R6C/ux87uuTyjni0QeUMCoEr3ZMeBo44r63qIcHh6kReRQHwFS/ykOr3ZhqUnqliM3hA9Z9Ym0on0keKKUZL3USASgdZ3+UQowwPkKE6Xza9N3yv3NhjNkhjx4/DBze0nRdrPtwsiQHHRZueOZPrq2GKn+1NNGMF1yc0oq864Sf5HpY/lzcBI=
   on:
     tags: true
     repo: abenassi/pyredatam

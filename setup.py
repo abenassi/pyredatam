@@ -35,8 +35,7 @@ setup(
     author_email='agusbenassi@gmail.com',
     url='https://github.com/abenassi/pyredatam',
     packages=[
-        'pyredatam',
-        'cpv2010arg'
+        'pyredatam'
     ],
     package_dir={'pyredatam':
                  'pyredatam'},
