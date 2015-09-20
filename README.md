@@ -1,6 +1,6 @@
 pyredatam
 ===============================
-[![Coverage Status](https://coveralls.io/repos/abenassi/pyredatam/badge.svg?branch=master)](https://coveralls.io/r/abenassi/pyredatam?branch=master)
+[![Coverage Status](https://coveralls.io/repos/abenassi/pyredatam/badge.svg?branch=master&service=github)](https://coveralls.io/github/abenassi/pyredatam?branch=master)
 [![Build Status](https://travis-ci.org/abenassi/pyredatam.svg?branch=master)](https://travis-ci.org/abenassi/pyredatam)
 [![PyPI](https://badge.fury.io/py/pyredatam.svg)](http://badge.fury.io/py/pyredatam)
 [![Buy me a coffee](https://img.shields.io/badge/donate-buy%20me%20a%20coffee-blue.svg)](http://ko-fi.com?i=934NLRIV80O8)
