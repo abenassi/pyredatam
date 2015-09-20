@@ -1,5 +1,20 @@
-# pyredatam
-Generar consultas REDATAM en python
+===============================
+pyredatam
+===============================
+
+.. image:: https://img.shields.io/travis/abenassi/pyredatam.svg
+        :target: https://travis-ci.org/abenassi/pyredatam
+
+.. image:: https://img.shields.io/pypi/v/pyredatam.svg
+        :target: https://pypi.python.org/pypi/pyredatam
 
 
-Este repositorio todavía está en desarrollo.
+Genera consultas REDATAM en python.
+
+* Free software: ISC license
+* Documentation: https://pyredatam.readthedocs.org.
+
+Features
+--------
+
+* TODO

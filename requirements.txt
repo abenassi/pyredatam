@@ -1,0 +1,4 @@
+selenium==2.47.3
+pyvirtualdisplay==0.1.5
+html5lib
+pandas>=0.16.2
