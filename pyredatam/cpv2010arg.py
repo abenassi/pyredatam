@@ -51,7 +51,7 @@ def parse_arealist_to_dataframe(html):
     Returns:
         pandas.DataFrame: Data result from query.
     """
-    bs = BeautifulSoup(html)
+    bs = BeautifulSoup(html, "html5lib")
     rows = bs.find_all("tr")
     df = pd.DataFrame(columns=[td.get_text() for td in rows[1].find_all("td")])
     for row in rows[2:-1]:
