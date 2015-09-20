@@ -1,5 +1,6 @@
 include LICENSE
 include README.md
+include README_PIP.rst
 include Makefile
 include requirements.txt
 
