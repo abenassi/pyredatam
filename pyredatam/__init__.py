@@ -4,3 +4,4 @@ __author__ = 'Agustín Benassi'
 __email__ = 'agusbenassi@gmail.com'
 
 from pyredatam import arealist_query
+import cpv2010arg

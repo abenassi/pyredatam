@@ -11,7 +11,7 @@ from __future__ import unicode_literals
 import unittest
 import nose
 
-from pyredatam import cpv2010arg
+import pyredatam.cpv2010arg
 
 
 class Cpv2010argTestCase(unittest.TestCase):
