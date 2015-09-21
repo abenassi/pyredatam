@@ -21,6 +21,7 @@ from bs4 import BeautifulSoup
 import requests
 from collections import OrderedDict
 import json
+import time
 
 from utils import get_data_dir
 
@@ -116,6 +117,9 @@ def make_query(query, url=BASE_URL):
         # driver.switch_to.frame("grid")
         _switch_to_loaded_frame(driver, "grid")
 
+        _wait_until_text(driver, "body > p > a:nth-child(1)",
+                         "Descargar en formato Excel")
+
         html = driver.page_source
 
         driver.close()
@@ -185,6 +189,11 @@ def _get_clickable_by_id(driver, element_id):
 def _switch_to_loaded_frame(driver, frame_id):
     return WebDriverWait(driver, 20).until(
         EC.frame_to_be_available_and_switch_to_it((By.NAME, frame_id)))
+
+
+def _wait_until_text(driver, css_selector, text):
+    WebDriverWait(driver, 20).until(EC.text_to_be_present_in_element(
+        (By.CSS_SELECTOR, css_selector), text))
 
 
 def _parse_df_to_dict(df):
