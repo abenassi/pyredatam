@@ -53,6 +53,9 @@ html = pyredatam.cpv2010arg.make_query(query)
 
 # para construir el diccionario de entidades, variables y categorías
 dicc, entidades_geo, entidades_data = pyredatam.cpv2010arg.scrape_dictionary()
+
+# para tomar los ids de provincias y departamentos del Censo 2010 de Argentina
+ids = pyredatam.cpv2010arg.get_ids()
 ```
 
 ## Generar consultas REDATAM
