@@ -10,6 +10,7 @@ Make a query to 2010 Argentina's Census REDATAM database.
 from __future__ import unicode_literals
 from __future__ import print_function
 from __future__ import with_statement
+import os
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
@@ -19,6 +20,9 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import requests
 from collections import OrderedDict
+import json
+
+from utils import get_data_dir
 
 BASE_URL = "http://200.51.91.245/argbin/RpWebEngine.exe/PortalAction?BASE=CPV2010B"
 URL_DICTIONARY = "http://200.51.91.245/argbin/RpWebEngine.exe/Dictionary?&BASE=CPV2010B&ITEM=DICALL&MAIN=WebServerMain.inl"
@@ -114,6 +118,16 @@ def make_query(query, url=BASE_URL):
         driver.close()
 
     return html
+
+
+def get_dictionary(dict_filename="cpv2010arg_diccionario.json"):
+    with open(os.path.join(get_data_dir(), dict_filename), "r") as f:
+        return json.load(f)
+
+
+def get_ids(ids_filename="cpv2010arg_ids.json"):
+    with open(os.path.join(get_data_dir(), ids_filename), "r") as f:
+        return json.load(f)
 
 
 def scrape_dictionary(url_dictionary=URL_DICTIONARY,
