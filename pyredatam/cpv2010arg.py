@@ -101,7 +101,8 @@ def make_query(query, url=BASE_URL):
         procesador.click()
 
         driver.switch_to.default_content()
-        driver.switch_to.frame("Output")
+        # driver.switch_to.frame("Output")
+        _switch_to_loaded_frame(driver, "Output")
 
         query_input = driver.find_element_by_tag_name("textarea")
         query_input.send_keys(query.decode("utf-8", "ignore"))
@@ -110,8 +111,10 @@ def make_query(query, url=BASE_URL):
         submit.click()
 
         driver.switch_to.default_content()
-        driver.switch_to.frame("Output")
-        driver.switch_to.frame("grid")
+        # driver.switch_to.frame("Output")
+        _switch_to_loaded_frame(driver, "Output")
+        # driver.switch_to.frame("grid")
+        _switch_to_loaded_frame(driver, "grid")
 
         html = driver.page_source
 
@@ -177,6 +180,11 @@ def scrape_dictionary(url_dictionary=URL_DICTIONARY,
 def _get_clickable_by_id(driver, element_id):
     return WebDriverWait(driver, 20).until(
         EC.element_to_be_clickable((By.ID, element_id)))
+
+
+def _switch_to_loaded_frame(driver, frame_id):
+    return WebDriverWait(driver, 20).until(
+        EC.frame_to_be_available_and_switch_to_it((By.NAME, frame_id)))
 
 
 def _parse_df_to_dict(df):
