@@ -10,9 +10,17 @@ Genera consultas REDATAM en python.
 
 ## Instalación
 
+Desde pypi (lo más sencillo):
+```python
+pip install pyredatam
+```
+
+Clonando el repositorio e instalando en developer mode:
 ```python
 virtualenv pyredatam  # Create new environment
 source pyredatam/bin/activate  # Activate the environment
+cd path_to_pyredatam_repository
+pip install -e .  # Install in developer mode
 pip install -r requirements.txt  # Install dependencies
 ```
 

@@ -8,10 +8,20 @@ Genera consultas REDATAM en python.
 Instalación
 -----------
 
+Desde pypi (lo más sencillo):
+
+.. code:: python
+
+    pip install pyredatam
+
+Clonando el repositorio e instalando en developer mode:
+
 .. code:: python
 
     virtualenv pyredatam  # Create new environment
     source pyredatam/bin/activate  # Activate the environment
+    cd path_to_pyredatam_repository
+    pip install -e .  # Install in developer mode
     pip install -r requirements.txt  # Install dependencies
 
 Uso
@@ -74,28 +84,42 @@ las contribuciones!
    -  *Filtro Universal* (expresión de filtro en lenguaje REDATAM)
    -  *Peso* (uso de ponderadores - **Falta implementar**)
 
-Scrapear resultados de consultas REDATAM
-----------------------------------------
+Obtener resultados de consultas REDATAM
+---------------------------------------
 
 El paquete incluirá un módulo por base de datos REDATAM que permita
 hacer las consultas generadas a la base correspondiente al que se acceda
 como ``pyredatam.modulo_redatam_db``. Por ahora sólo se provee un módulo
 con métodos para consultar y parsear el resultado de la base de datos
-REDATAM del Censo 2010 de Argentina. Todos los módulos que se agreguen
-deberían proveer, al menos, los siguientes métodos públicos:
+REDATAM del Censo 2010 de Argentina (``pyredatam.cpv2010arg``). Todos
+los módulos que se agreguen deberían proveer, al menos, los siguientes
+métodos públicos:
 
 -  ``make_query(query)`` - Devuelve un html (u otra cosa, si no es
    posible) con el resultado de la query realizada a la base de datos.
 -  ``make_arealist_query(query)`` - Métodos específicos para cada tipo
    de consulta, que usen make\_query() y luego parseen el resultado html
    (o del formato que sea) a un DataFrame de pandas.
--  ``scrape_dictionary()`` - Un método que devuelva un diccionario
+
+Adicionalmente el módulo podría contener otros métodos útiles para
+utilizar eficazmente los resultados de consultas a la base REDATAM en
+cuestión. Como ejemplo, el módulo ``pyredatam.cpv2010arg`` incluye los
+siguientes:
+
+-  ``scrape_dictionary()`` - Un método que devuelve un diccionario
    jerárquico ordenado (collections.OrderedDict) de entidades, sus
    variables y las categorías de las variables; una lista de las
    entidades que se utilizan para agregar geográficamente la
    información, y una lista de las entidades que contienen variables con
    data (no usadas para agregar la base de datos geográficamente, sino
    con la data que es realmente el objetivo de la encuesta o censo).
+-  ``get_dictionary()`` - Un método que devuelve el mismo diccionario
+   (sin las listas de entidades geográficas y no geográficas) pero, en
+   lugar de scrapearlo, lo toma de un *.json* de la carpeta
+   *pyredatam/data*.
+-  ``get_ids()`` - Un método que devuelve un diccionario con los ids de
+   dos entidades geográficas ("PROV" y "DPTO") y su descripción, tomado
+   también de un *.json* de la carpeta *pyredatam/data*.
 
 .. |Coverage Status| image:: https://coveralls.io/repos/abenassi/pyredatam/badge.svg?branch=master&service=github
    :target: https://coveralls.io/github/abenassi/pyredatam?branch=master
