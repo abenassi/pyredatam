@@ -66,12 +66,28 @@ Esta es una lista de los tipos de consultas que el sistema REDATAM permite, la i
 * Frecuencias (**Falta implementar**)
 * Cruce de Variables (**Falta implementar**)
 * Promedio (**Falta implementar**)
-* Mediana (**Falta implementar**)
-* Conteo (**Falta implementar**)
+
+* Mediana (**SOPORTADO!**)
+    - *Mediana de* (Variable cuya mediana se quiere pedir)
+    - *Variable* (Variable dentro de cuyas categorías se quiere analizar la mediana)
+    - *Cruzada por* (2da variable para abrir los resultados, generando un cuadro de doble entrada)
+    - *Código y Rótulos* (Incluir descripción además de los códigos)
+    - *Quiebre de Área* (Nivel de agregación geográfico por el cual se quiebran los resultados)
+
+* Conteo (**SOPORTADO!**)
+    - *Nivel de Salida* (nivel de agregación geográfico al cual se piden los datos)
+    - *Elemento a ser Contado* (Entidad cuyas instancias dentro de cada área del nivel de salida deben ser contadas)
+    - *Incluir Totales* (Incluye el total de las columnas)
+    - *Ordenación* - **Falta implementar**
+    - *Porcentaje* - **Falta implementar**
+    - *Incluir Nombres del Área de Salida* (incluir nombres además de los códigos de las áreas de salida)
+
 * Lista por Áreas (**SOPORTADO!**)
     - *Una o más variables* (variables cuyos datos se quiere obtener)
     - *Nivel de Salida* (nivel de agregación geográfico al cual se piden los datos)
-    - *Incluir Nombres del Área de Salida* (incluir nombres además de los códigos de las áreas de salida - **Falta implementar**)
+    - *Incluir Nombres del Área de Salida* (incluir nombres además de los códigos de las áreas de salida)
+
+* **Funcionalidad común a todos los tipos de consulta**
     - *Título* (título que tendrá la tabla con los resultados solicitados)
     - *Selección de Área* (restringir los resultados a un área geográfica en particular)
     - *Filtro Universal* (expresión de filtro en lenguaje REDATAM)

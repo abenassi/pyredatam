@@ -47,6 +47,9 @@ def make_arealist_query(query):
     return parse_arealist_to_dataframe(make_query(query))
 
 
+make_counter_query = make_arealist_query
+
+
 def parse_arealist_to_dataframe(html):
     """Parse an html result of a query to REDATAM, into a DataFrame.
 
